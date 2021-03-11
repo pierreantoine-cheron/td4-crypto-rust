@@ -51,10 +51,10 @@ fn chiffrage_dechiffrage_fichier() {
         // recuperation de l'argument contenant le chemin du fichier
         let path = &args[1];
 
-
+        // lecture du fichier et conversion en tableau d'octets
         let data = fs::read_to_string(path).unwrap();
-
         let data = data.as_bytes();
+        
         // declaration de la clef et du vecteur d'initialisation (iv)
         // meme si l'algorithme DES ne requiert pas d'iv, la methode generique permettant de chiffrer les donnees necessite un iv
         let mut key = [0; LEN];
